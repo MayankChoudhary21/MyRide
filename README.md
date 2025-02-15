@@ -1,20 +1,75 @@
 # MyRide
 
-## Step 1:
-# Create 2 folders frontend and backend
+## Project Setup
 
-## Step 2:
-# Run the command : cd backend
-# Run the command : npm init -y
-# Rund the command: npm install express
+### Step 1: Create Project Structure
+1. Create two folders:
+   ```sh
+   mkdir frontend backend
+   ```
 
-## Step 3:
-# Create a file name app.js and acquire the express
-# Create a file name server.js to acquire the http
+### Step 2: Set Up Backend
+1. Navigate to the backend folder:
+   ```sh
+   cd backend
+   ```
+2. Initialize a Node.js project:
+   ```sh
+   npm init -y
+   ```
+3. Install Express:
+   ```sh
+   npm install express
+   ```
 
-## Step 4:
-# Run the command :npm install dotenv cors (to select the server ports based on the environment.)
-# Create .env file inside the backend folder.
+### Step 3: Create Essential Files
+1. Create a file named `app.js` and import Express:
+   ```js
+   const express = require('express');
+   const app = express();
 
-## Step 5:
-# Run the server using the command npx nodemon
+   app.get('/', (req, res) => {
+       res.send('Welcome to MyRide!');
+   });
+
+   module.exports = app;
+   ```
+
+2. Create a file named `server.js` and acquire the HTTP module:
+   ```js
+   const http = require('http');
+   const app = require('./app');
+   const server = http.createServer(app);
+
+   const PORT = process.env.PORT || 5000;
+   server.listen(PORT, () => {
+       console.log(`Server running on port ${PORT}`);
+   });
+   ```
+
+### Step 4: Install Environment and CORS
+1. Install dotenv and cors:
+   ```sh
+   npm install dotenv cors
+   ```
+2. Create a `.env` file inside the `backend` folder and specify the port:
+   ```env
+   PORT=5000
+   ```
+
+### Step 5: Start the Server
+1. Run the server using Nodemon:
+   ```sh
+   npx nodemon server.js
+   ```
+
+## Additional Information
+- `frontend` folder can be used for React or any frontend framework.
+- Ensure `nodemon` is installed globally or install it locally using:
+  ```sh
+  npm install --save-dev nodemon
+  ```
+- To stop the server, use `Ctrl + C` in the terminal.
+
+### Happy Coding! 🚀
+
