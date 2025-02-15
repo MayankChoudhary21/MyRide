@@ -21,6 +21,7 @@
    ```sh
    npm install express
    ```
+<<<<<<< HEAD
 
 ### Step 3: Create Essential Files
 1. Create a file named `app.js` and import Express:
@@ -84,4 +85,57 @@
 
 ### Happy Coding! 🚀
 
+=======
+
+### Step 3: Create Essential Files
+1. Create a file named `app.js` and import Express:
+   ```js
+   const express = require('express');
+   const app = express();
+
+   app.get('/', (req, res) => {
+       res.send('Welcome to MyRide!');
+   });
+
+   module.exports = app;
+   ```
+
+2. Create a file named `server.js` and acquire the HTTP module:
+   ```js
+   const http = require('http');
+   const app = require('./app');
+   const server = http.createServer(app);
+
+   const PORT = process.env.PORT || 5000;
+   server.listen(PORT, () => {
+       console.log(`Server running on port ${PORT}`);
+   });
+   ```
+
+### Step 4: Install Environment and CORS
+1. Install dotenv and cors:
+   ```sh
+   npm install dotenv cors
+   ```
+2. Create a `.env` file inside the `backend` folder and specify the port:
+   ```env
+   PORT=5000
+   ```
+
+### Step 5: Start the Server
+1. Run the server using Nodemon:
+   ```sh
+   npx nodemon server.js
+   ```
+
+## Additional Information
+- `frontend` folder can be used for React or any frontend framework.
+- Ensure `nodemon` is installed globally or install it locally using:
+  ```sh
+  npm install --save-dev nodemon
+  ```
+- To stop the server, use `Ctrl + C` in the terminal.
+
+### Happy Coding! 🚀
+>>>>>>> 484b7541dd0c6542d945969e995d34d5a956cc82
 
