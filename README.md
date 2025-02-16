@@ -21,7 +21,6 @@
    ```sh
    npm install express
    ```
-<<<<<<< HEAD
 
 ### Step 3: Create Essential Files
 1. Create a file named `app.js` and import Express:
@@ -83,59 +82,53 @@
 - Install bcrypt for hashing passwords.
 - Install jsonwebtoken to get the JWT token for authentication.
 
-### Happy Coding! 🚀
+## Step 9:
+- Create the controllers and routes.
+- Insatall Express Validator package
+- Create the services folder and create MongoDB services.
 
-=======
+## API Endpoints
 
-### Step 3: Create Essential Files
-1. Create a file named `app.js` and import Express:
-   ```js
-   const express = require('express');
-   const app = express();
+### POST /user/register
 
-   app.get('/', (req, res) => {
-       res.send('Welcome to MyRide!');
-   });
+#### Description
+Registers a new user.
 
-   module.exports = app;
-   ```
+#### Request Body
+- `fullname.firstname` (string, required): The first name of the user. Must be at least 3 characters long.
+- `fullname.lastname` (string, optional): The last name of the user. Must be at least 3 characters long.
+- `email` (string, required): The email of the user. Must be a valid email format.
+- `password` (string, required): The password of the user. Must be at least 6 characters long.
 
-2. Create a file named `server.js` and acquire the HTTP module:
-   ```js
-   const http = require('http');
-   const app = require('./app');
-   const server = http.createServer(app);
+#### Response
+- `201 Created`: Returns the JWT token and user information if registration is successful.
+- `400 Bad Request`: Returns validation errors if the request body is invalid.
 
-   const PORT = process.env.PORT || 5000;
-   server.listen(PORT, () => {
-       console.log(`Server running on port ${PORT}`);
-   });
-   ```
+#### Example Request
+```json
+{
+  "fullname": {
+    "firstname": "John",
+    "lastname": "Doe"
+  },
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+```
 
-### Step 4: Install Environment and CORS
-1. Install dotenv and cors:
-   ```sh
-   npm install dotenv cors
-   ```
-2. Create a `.env` file inside the `backend` folder and specify the port:
-   ```env
-   PORT=5000
-   ```
-
-### Step 5: Start the Server
-1. Run the server using Nodemon:
-   ```sh
-   npx nodemon server.js
-   ```
-
-## Additional Information
-- `frontend` folder can be used for React or any frontend framework.
-- Ensure `nodemon` is installed globally or install it locally using:
-  ```sh
-  npm install --save-dev nodemon
-  ```
-- To stop the server, use `Ctrl + C` in the terminal.
+#### Example Response
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "_id": "603d2149fc13ae1a00000001",
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john.doe@example.com"
+  }
+}
+```
 
 ### Happy Coding! 🚀
->>>>>>> 484b7541dd0c6542d945969e995d34d5a956cc82
-
