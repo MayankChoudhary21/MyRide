@@ -130,5 +130,6 @@ Registers a new user.
   }
 }
 ```
+- For User Profile authentication we will have either through cookie or header install the cookie-parser
 
 ### Happy Coding! 🚀
