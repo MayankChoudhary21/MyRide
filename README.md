@@ -132,4 +132,10 @@ Registers a new user.
 ```
 - For User Profile authentication we will have either through cookie or header install the cookie-parser
 
+# Frontend part
+- npm create vite@latest
+- cd frontend 
+- npm  install
+- npm run dev
+
 ### Happy Coding! 🚀
