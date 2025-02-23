@@ -137,5 +137,6 @@ Registers a new user.
 - cd frontend 
 - npm  install
 - npm run dev
+- npm i react-router-dom
 
 ### Happy Coding! 🚀
