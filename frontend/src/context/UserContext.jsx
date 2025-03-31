@@ -1,9 +1,9 @@
 import React, { createContext, useState } from "react";
 
-// Create the context
+// Create the User Context
 export const UserContext = createContext(null);
 
-// Define the provider component
+// UserProvider Component
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
@@ -14,5 +14,4 @@ const UserProvider = ({ children }) => {
   );
 };
 
-// Ensure it's a default export
 export default UserProvider;
